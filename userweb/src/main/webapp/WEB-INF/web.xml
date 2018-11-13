@@ -10,6 +10,17 @@
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+
+    <!--1  Listener监听器  当Tomcat WEB应用服务器启动时，将SpringIOC容器启动，为其提供对象服务-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+
   <!--2 配置所有url请求，都进入SpringMVC框架进行执行-->
   <servlet>
     <servlet-name>SpringDispatcherServlet</servlet-name>
